@@ -1,9 +1,10 @@
 <!-- Unit 13 Project
 Requirements
-[  ] Two Interactive Drop-down Inputs 
+[ yes ] Two Interactive Drop-down Inputs 
 [  ] Two Different jQuery Animation Methods 
-[  ] Add Five CSS Declarations
-[  ] Include Three Images
+[ 3 ] Add Five CSS Declarations
+[yes
+] Include Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Google Font
@@ -22,31 +23,54 @@ Select ONE Additional Feature to Add
   </head>
   <body>
     <h1>Quiz About [Me]</h1>
+    <br />
+    <img
+      src="https://miro.medium.com/v2/resize:fit:620/1*kwN_Y8GNf2ZB6sNQxngVyw@2x.jpeg"
+      width="200"
+      <br
+    />
     <hr />
     <!-- Movie Question -->
     <form id="movie-form">
       <label>
         🎥 What is my favorite movie?
+        <img
+          src="https://www.cia-france.com/media/1492/les-films-incontournables-du-cinema-w_2524x884.jpg"
+          width="300"
+        />
         <select id="movie-answer">
-          <option value="movie1">movie 1</option>
-          <option value="movie2">movie 2</option>
-          <option value="movie3">movie 3</option>
-          <option value="movie4">movie 4</option>
+          <option value="movie1">Inception</option>
+          <option value="movie2">let it shine</option>
+          <option value="movie3">The minecraft Movie</option>
+          <option value="movie4">Sinners</option>
         </select>
       </label>
       <button type="submit">Check Movie Answer</button>
     </form>
     <div id="movie-result"></div>
     <hr />
+
+    <script>
+       $( "#movie-form"). on("submit", function (event) {
+      event.preventDefault();
+      $( "#movie-result") .animate(
+      { width: "500px", marginLeft: "30px", borderWidth: "10px" },
+      1500
+      );
+    </script>
     <!-- Book Question -->
     <form id="book-form">
       <label>
         📖 What is my favorite book?
+        <img
+          src="https://images.theconversation.com/files/45159/original/rptgtpxd-1396254731.jpg?ixlib=rb-4.1.0&q=45&auto=format&w=754&fit=clip"
+          width="200"
+        />
         <select id="book-answer">
-          <option value="book1">book 1</option>
-          <option value="book2">book 2</option>
-          <option value="book3">book 3</option>
-          <option value="book4">book 4</option>
+          <option value="book1">Scythe</option>
+          <option value="book2">59 Bus</option>
+          <option value="book3">Poet X</option>
+          <option value="book4">Raisin in the sun</option>
         </select>
       </label>
       <button type="submit">Check Book Answer</button>
@@ -58,13 +82,21 @@ Select ONE Additional Feature to Add
       $("#movie-form").on("submit", function (event) {
         event.preventDefault();
 
+        $("movie-form").slideDown(1000, function () {
+          $("snake-h1").slideDown;
+        });
+
         var $answer = $("#movie-answer");
         var answer = $answer.val();
 
         if (answer === "movie1") {
-          $("#movie-result").text("YESSSS!");
-        } else {
-          $("#movie-result").text("Try Again!");
+          $("#movie-result").text("10/10 but no");
+        } else if (answer === "movie2") {
+          $("#movie-result").text("best movie eva!!");
+        } else if (answer === "movie3") {
+          $("#movie-result").text("CHICKEN JOCKEY! noo");
+        } else if (answer === "movie4") {
+          $("#movie-result").text("DIDNT SEE IT YET :(");
         }
       });
 
@@ -76,9 +108,16 @@ Select ONE Additional Feature to Add
         var answer = $answer.val();
 
         if (answer === "book1") {
-          $("#book-result").text("YESSSS!");
-        } else {
-          $("#book-result").text("Try Again!");
+          $("#book-result").text("YESSS!:(");
+        }
+        if (answer === "book2") {
+          $("#book-result").text("book sucks");
+        }
+        if (answer === "book3") {
+          $("#book-result").text("7-8");
+        }
+        if (answer === "book4") {
+          $("#book-result").text("no.");
         }
       });
     </script>
