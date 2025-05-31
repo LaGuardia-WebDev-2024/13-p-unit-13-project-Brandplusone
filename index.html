@@ -61,8 +61,16 @@ background:  purple
       event.preventDefault();
       $( "#movie-result") .animate(
       { width: "500px", marginLeft: "30px", borderWidth: "10px" },
-      1500
+      1500;
+      
+        var answer = $("#movie-answer");
+var answer = $answer.val();
+if (answer === "movie2") {
+$("#movie-result"). text("YESSSS! ");
+s else {
+$("#movie-result"). text ("Try Again!");
       );
+         
     </script>
     <!-- Book Question -->
     <form id="book-form">
